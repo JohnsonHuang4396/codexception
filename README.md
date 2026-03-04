@@ -8,16 +8,16 @@ Instead of losing hard-won debugging and implementation knowledge after each tas
 
 ### Quick install (CLI, antfu-style)
 
-Install all skills from this repo:
+Install all skills from this repo (run from your target project root):
 
 ```bash
-pnpx skills add JohnsonHuang4396/codexception --skill='*'
+pnpx skills add JohnsonHuang4396/codexception --skill='*' -y
 ```
 
 Install globally:
 
 ```bash
-pnpx skills add JohnsonHuang4396/codexception --skill='*' -g
+pnpx skills add JohnsonHuang4396/codexception --skill='*' -y -g
 ```
 
 ### Alternative install (local script)
@@ -130,4 +130,3 @@ Suggested flow:
 ## License
 
 MIT
-
