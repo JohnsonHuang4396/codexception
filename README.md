@@ -113,10 +113,10 @@ If any gate fails, keep the insight in task notes instead of creating a skill.
 ## Examples
 
 Migrated and local examples:
-- `skills/examples/nextjs-server-side-error-debugging/SKILL.md`
-- `skills/examples/prisma-connection-pool-exhaustion/SKILL.md`
-- `skills/examples/typescript-circular-dependency/SKILL.md`
-- `skills/examples/permission-cache-skill.md`
+- `examples/nextjs-server-side-error-debugging/SKILL.md`
+- `examples/prisma-connection-pool-exhaustion/SKILL.md`
+- `examples/typescript-circular-dependency/SKILL.md`
+- `examples/permission-cache-skill.md`
 
 ## Contributing
 
@@ -130,3 +130,4 @@ Suggested flow:
 ## License
 
 MIT
+
