@@ -1,36 +1,117 @@
 # codexception-mvp
 
-A minimum viable project (MVP) to migrate Claudeception's skill-extraction workflow into Codex.
+Codex-oriented implementation of a continuous skill-extraction workflow.
 
-## Goals
-- Define a Codex-executable workflow for post-task review -> skill extraction -> persistent storage.
-- Start with project structure and documentation first, without automation hooks.
+Instead of losing hard-won debugging and implementation knowledge after each task, this project captures reusable patterns as structured skills and keeps them retrievable for future work.
 
-## Current Scope (MVP v0)
-- Documentation conventions
-- Skill template
-- Execution checklist
+## Installation
 
-## Out of Scope (for now)
-- Automatic hook injection
-- Large-scale script automation
-- CI integration
+### Step 1: Clone this repository
 
-## Next Steps
-1. Complete document-level migration using `docs/migration-checklist.md`.
-2. Produce the first real skill from an actual task.
-3. Decide whether to add script automation in `scripts/`.
+```bash
+git clone https://github.com/JohnsonHuang4396/codexception.git
+cd codexception
+```
 
-## Migrated from Claudeception
+### Step 2: Use project-level skills (recommended)
 
-- Core skill migrated: `skills/continuous-learning/SKILL.md`
-- Official examples migrated:
-  - `skills/examples/nextjs-server-side-error-debugging/SKILL.md`
-  - `skills/examples/prisma-connection-pool-exhaustion/SKILL.md`
-  - `skills/examples/typescript-circular-dependency/SKILL.md`
-- Parsing fixture and test:
-  - `tests/fixtures/test-skill-parsing.yaml`
-  - `scripts/test-skill-parsing.js`
-  - `docs/test-skill-parsing.md`
-- Research reference document:
-  - `docs/references/research-references.md`
+This repository stores skills under `skills/` and is intended to be used as a project-scoped skill workspace.
+
+If you need user-scoped sharing, copy selected skills to your Codex user skills directory.
+
+### Step 3: Optional parser sanity test
+
+```bash
+node scripts/test-skill-parsing.js
+```
+
+This confirms frontmatter parsing remains stable for special characters.
+
+## Usage
+
+### Automatic Mode
+
+The workflow is enforced through project rules in `AGENTS.md`:
+- Finish task
+- Run post-task review
+- Extract reusable knowledge into a skill when quality gates pass
+
+### Explicit Mode
+
+You can manually create a new skill from a completed task:
+1. Copy `skills/skill-template.md`
+2. Fill trigger conditions, solution steps, and validation
+3. Save as `skills/<topic>/SKILL.md`
+
+### What Gets Extracted
+
+Only knowledge that is:
+- Reusable in future tasks
+- Non-trivial (required investigation, not simple lookup)
+- Specific enough to be matched by scenario and keywords
+- Verified with observable outcomes
+
+## Research
+
+The workflow design is informed by prior agent-learning literature and skills-system practices.
+
+See:
+- `docs/references/research-references.md`
+
+## How It Works
+
+Codex can operate with a skill-oriented repository structure:
+- Skill files contain searchable frontmatter + executable guidance
+- Retrieval quality depends on precise descriptions and trigger conditions
+- Post-task extraction continuously expands the local skill library
+
+This project focuses on reliable, reproducible skill authoring before adding heavy automation.
+
+## Skill Format
+
+Skills are markdown files with YAML frontmatter and structured sections:
+
+```yaml
+---
+name: <kebab-case-skill-name>
+description: |
+  Clear scenario + trigger conditions + problem scope.
+author: Codex
+version: 1.0.0
+date: YYYY-MM-DD
+---
+```
+
+Use the canonical template:
+- `skills/skill-template.md`
+
+## Quality Gates
+
+A skill should be saved only if it is:
+- Reproducible
+- Searchable
+- Reusable
+- Verified
+
+If any gate fails, keep the insight in task notes instead of creating a skill.
+
+## Examples
+
+Migrated and local examples:
+- `skills/examples/nextjs-server-side-error-debugging/SKILL.md`
+- `skills/examples/prisma-connection-pool-exhaustion/SKILL.md`
+- `skills/examples/typescript-circular-dependency/SKILL.md`
+- `skills/examples/permission-cache-skill.md`
+
+## Contributing
+
+Contributions are welcome.
+
+Suggested flow:
+1. Propose improvements to template or quality gates
+2. Add a concrete, validated skill example
+3. Include verification evidence in docs or scripts when relevant
+
+## License
+
+MIT
