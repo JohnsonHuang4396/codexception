@@ -1,27 +1,96 @@
 ---
-name: <skill-name>
-description: <触发条件 + 适用场景 + 关键关键词>
+name: [descriptive-kebab-case-name]
+description: |
+  [REQUIRED: Precise description that enables semantic matching. Include:
+  (1) What problem this solves
+  (2) Specific trigger conditions - exact error messages, symptoms, scenarios
+  (3) Key technologies/frameworks involved
+  Use phrases like "Use when:", "Helps with:", "Solves:"]
+author: Codex
+version: 1.0.0
+date: YYYY-MM-DD
 ---
 
-# Skill: <skill-name>
+# [Skill Name - Human Readable Title]
 
-## When to use
-- 具体触发信号（报错、场景、约束）
+## Problem
 
-## Inputs
-- 需要的上下文信息
+[Clear, concise description of the problem this skill addresses. 
+What pain point does this solve? Why is it non-obvious?]
 
-## Steps
-1. 第一步
-2. 第二步
-3. 第三步
+## Context / Trigger Conditions
 
-## Validation
-- 如何判断成功
-- 命令/检查点
+[When should this skill be activated? Be specific:]
 
-## Anti-patterns
-- 不应该使用该 skill 的情况
+- [Exact error message 1]
+- [Exact error message 2]
+- [Observable symptom or behavior]
+- [Environmental condition (framework, tool, platform)]
+
+## Solution
+
+[Step-by-step instructions to resolve the problem]
+
+### Step 1: [First Action]
+
+[Detailed instructions with code examples if applicable]
+
+```language
+// Example code
+```
+
+### Step 2: [Second Action]
+
+[Continue with clear, actionable steps]
+
+### Step 3: [Third Action]
+
+[Include alternatives or variations if relevant]
+
+## Verification
+
+[How to confirm the solution worked:]
+
+1. [Verification step 1]
+2. [Verification step 2]
+3. [Expected outcome]
 
 ## Example
-- 一个最小示例
+
+**Scenario**: [Concrete example of when this skill applies]
+
+**Before**:
+```
+[Error message or problematic code]
+```
+
+**After**:
+```
+[Fixed code or successful output]
+```
+
+## Notes
+
+[Important caveats, edge cases, and related considerations:]
+
+- [Caveat 1]
+- [Related skill or documentation link]
+- [Known limitation]
+- [When NOT to use this skill]
+
+---
+
+<!-- 
+Extraction Checklist (remove before saving):
+- [ ] Name is descriptive and uses kebab-case
+- [ ] Description includes specific error messages/symptoms
+- [ ] Problem is clearly stated
+- [ ] Trigger conditions are specific and searchable
+- [ ] Solution is step-by-step and actionable
+- [ ] Code examples are complete and tested
+- [ ] Verification steps are included
+- [ ] Example is concrete and realistic
+- [ ] Notes cover edge cases and caveats
+- [ ] No sensitive information (credentials, internal URLs)
+-->
+

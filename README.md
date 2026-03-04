@@ -20,3 +20,15 @@
 1. 先按 `docs/migration-checklist.md` 完成文档内迁移。
 2. 用一个真实任务产出第一个技能样例。
 3. 再决定是否补 `scripts/` 自动化。
+
+## Migrated from Claudeception
+
+- Core skill migrated: `skills/continuous-learning/SKILL.md`
+- Official examples migrated:
+  - `skills/examples/nextjs-server-side-error-debugging/SKILL.md`
+  - `skills/examples/prisma-connection-pool-exhaustion/SKILL.md`
+  - `skills/examples/typescript-circular-dependency/SKILL.md`
+- Parsing fixture and test:
+  - `tests/fixtures/test-skill-parsing.yaml`
+  - `scripts/test-skill-parsing.js`
+  - `docs/test-skill-parsing.md`

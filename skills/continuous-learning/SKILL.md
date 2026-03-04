@@ -1,0 +1,11 @@
+---
+name: continuous-learning
+description: |
+  Continuous learning system that extracts reusable knowledge from work sessions.
+  Triggers: (1) /continuous-learning command to review session learnings, (2) "save this as a skill"
+  or "extract a skill from this", (3) "what did we learn?", (4) After any task involving
+  non-obvious debugging, workarounds, or trial-and-error discovery. Creates new Codex
+  skills when valuable, reusable knowledge is identified.
+author: Codex
+version: 2.6.0
+
