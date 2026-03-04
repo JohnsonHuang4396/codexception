@@ -1,11 +1,164 @@
 ---
 name: continuous-learning
 description: |
-  Continuous learning system that extracts reusable knowledge from work sessions.
-  Triggers: (1) /continuous-learning command to review session learnings, (2) "save this as a skill"
-  or "extract a skill from this", (3) "what did we learn?", (4) After any task involving
-  non-obvious debugging, workarounds, or trial-and-error discovery. Creates new Codex
-  skills when valuable, reusable knowledge is identified.
+  Continuous learning system for Codex that extracts reusable knowledge from completed work.
+  Triggers: (1) user asks to save/extract what was learned, (2) end-of-task review after non-obvious debugging
+  or trial-and-error, (3) recurring issues where a reusable fix pattern emerges. Produces or updates skills
+  in this repository when knowledge is specific, verified, and reusable.
 author: Codex
-version: 2.6.0
+version: 3.0.0
+date: 2026-03-04
+---
 
+# Continuous Learning Skill (Codex)
+
+You are a continuous learning system that turns verified task learnings into reusable skills.
+
+The objective is not to write more skills. The objective is to improve future task speed and correctness.
+
+## Core Principle: Selective Extraction
+
+Extract only knowledge that materially improves future execution. Do not convert routine work into skills.
+
+## When to Extract a Skill
+
+Extract when one or more of these conditions are true:
+
+1. Non-obvious solution required meaningful investigation.
+2. Error message was misleading and root cause was discovered.
+3. Project-specific pattern is repeatedly needed but not documented.
+4. Multi-step workflow can be standardized and reused.
+5. Tool integration required practical behavior not obvious from docs.
+
+## Quality Criteria
+
+Before extracting, verify all criteria:
+
+- Reusable: Applies beyond one one-off situation.
+- Non-trivial: Required discovery, not simple doc lookup.
+- Specific: Has precise trigger conditions and concrete steps.
+- Verified: Worked in practice with observable validation.
+
+## Extraction Process
+
+### Step 1: Identify Extractable Knowledge
+
+Capture:
+
+- Problem and environment context
+- Trigger signals (error text, symptoms, conditions)
+- Actual root cause
+- Minimal reliable solution path
+- Verification evidence
+
+### Step 2: Check Existing Skills First
+
+Search for overlap in `skills/`:
+
+- If a close match exists, update that skill.
+- If not, create a new focused skill.
+
+Avoid duplicate skills with slightly different wording.
+
+### Step 3: Research Best Practices When Needed
+
+Do targeted research when:
+
+- Topic is framework/library/version sensitive.
+- Best practices may have changed recently.
+- You need authoritative guidance for correctness.
+
+Prefer official documentation and primary sources.
+
+### Step 4: Write the Skill
+
+Use `skills/skill-template.md` and produce:
+
+- Accurate frontmatter (`name`, `description`, `version`, `date`)
+- Explicit trigger conditions
+- Ordered steps with no ambiguity
+- Validation checks with observable outcomes
+- Anti-patterns (when not to use)
+
+### Step 5: Save in Correct Location
+
+- Core skills: `skills/<skill-name>/SKILL.md`
+- Examples: `examples/<topic>/SKILL.md`
+
+## Description Writing Rules
+
+Description quality drives retrieval quality. Include:
+
+- Exact error strings or symptoms
+- Stack and context markers (framework/tool/runtime)
+- Use-case phrase like "Use when ..."
+
+Good descriptions are specific enough to match real tasks.
+
+## Retrospective Mode (End of Task)
+
+At task completion:
+
+1. Review what was discovered.
+2. List candidate learnings.
+3. Filter by quality criteria.
+4. Update/create 1-2 high-value skills max.
+5. Summarize what was extracted and why.
+
+## Self-Check Prompts
+
+Use these prompts after meaningful tasks:
+
+- What did we learn that was not obvious at the start?
+- Which signal would have helped us detect this faster?
+- Is this likely to happen again?
+- Can another engineer execute this without extra context?
+
+## Quality Gate Checklist
+
+Do not finalize until all pass:
+
+- [ ] Trigger conditions are explicit and searchable.
+- [ ] Solution was verified in real execution.
+- [ ] Validation steps are clear and observable.
+- [ ] Skill is reusable and not duplicated.
+- [ ] Sensitive info is excluded.
+- [ ] References added when research was used.
+
+## Anti-Patterns
+
+Avoid:
+
+- Over-extraction of routine fixes.
+- Vague descriptions with weak retrieval signals.
+- Unverified or speculative solutions.
+- Rewriting official docs without added practical value.
+- Creating new skills when updating existing one is better.
+
+## Skill Lifecycle
+
+1. Create initial version.
+2. Refine after repeated reuse.
+3. Mark deprecated when no longer valid.
+4. Archive obsolete skills.
+
+## Integration with codexception Workflow
+
+Automatic trigger conditions in practice:
+
+- Task involved non-obvious debugging.
+- Root-cause resolution required trial-and-error.
+- A reusable pattern emerged from implementation.
+
+Explicit trigger phrases from user:
+
+- "save this as a skill"
+- "extract what we learned"
+- "what did we learn"
+
+Primary storage paths in this repository:
+
+- `skills/`
+- `examples/`
+
+Goal: convert valuable discoveries into durable, retrievable execution knowledge.
