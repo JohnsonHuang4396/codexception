@@ -1,4 +1,4 @@
-# codexception-mvp
+# codexception
 
 Codex-oriented implementation of a continuous skill-extraction workflow.
 
@@ -6,20 +6,35 @@ Instead of losing hard-won debugging and implementation knowledge after each tas
 
 ## Installation
 
-### Step 1: Clone this repository
+### Quick install (CLI, antfu-style)
+
+Install all skills from this repo:
 
 ```bash
-git clone https://github.com/JohnsonHuang4396/codexception.git
-cd codexception
+pnpx skills add JohnsonHuang4396/codexception --skill='*'
 ```
 
-### Step 2: Use project-level skills (recommended)
+Install globally:
 
-This repository stores skills under `skills/` and is intended to be used as a project-scoped skill workspace.
+```bash
+pnpx skills add JohnsonHuang4396/codexception --skill='*' -g
+```
 
-If you need user-scoped sharing, copy selected skills to your Codex user skills directory.
+### Alternative install (local script)
 
-### Step 3: Optional parser sanity test
+If you prefer explicit file copy (or do not use the `skills` CLI), run:
+
+```powershell
+pwsh -File scripts/install-skills.ps1 -Scope user
+```
+
+For project-local installation:
+
+```powershell
+pwsh -File scripts/install-skills.ps1 -Scope project -ProjectRoot <your-project-path>
+```
+
+### Parser sanity test (optional)
 
 ```bash
 node scripts/test-skill-parsing.js

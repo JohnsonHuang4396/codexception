@@ -1,6 +1,6 @@
 # Research References
 
-This document compiles the academic research that informed the design of codexception-mvp.
+This document compiles the academic research that informed the design of codexception.
 
 ## Core Papers
 
@@ -174,11 +174,12 @@ Comprehensive survey covering memory architectures, tool use, and continuous lea
 If referencing this skill in academic work:
 
 ```
-@misc{codexception-mvp,
-  title={codexception-mvp: Autonomous Skill Extraction for LLM Agents},
+@misc{codexception,
+  title={codexception: Autonomous Skill Extraction for LLM Agents},
   author={Codex},
   year={2024},
   note={Implements continuous learning patterns from Voyager, CASCADE, SEAgent, and Reflexion research}
 }
 ```
+
 

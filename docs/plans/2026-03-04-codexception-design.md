@@ -1,4 +1,4 @@
-# 2026-03-04 codexception-mvp Design
+# 2026-03-04 codexception Design
 
 ## Context
 The goal is to reproduce Claudeception's core value in Codex: convert one-off problem-solving into reusable skills.
@@ -15,3 +15,4 @@ The goal is to reproduce Claudeception's core value in Codex: convert one-off pr
 ## Success Criteria
 - The project can be used immediately for manual skill extraction.
 - A new contributor can understand the workflow and produce a first skill draft within 10 minutes.
+

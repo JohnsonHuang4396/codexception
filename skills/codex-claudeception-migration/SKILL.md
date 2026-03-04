@@ -35,6 +35,7 @@ description: Use when migrating Claude-style skill consolidation workflows into 
 - Implementing complex automation before validating examples.
 
 ## Example
-- Scenario: migrate Claudeception into Codex by building `codexception-mvp` first.
+- Scenario: migrate Claudeception into Codex by building `codexception` first.
 - Output: directory scaffold, AGENTS review rules, migration checklist, and one formal migration skill.
 - Outcome: team can start manual consolidation now and automate later.
+
