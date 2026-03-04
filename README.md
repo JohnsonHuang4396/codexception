@@ -1,25 +1,25 @@
 # codexception-mvp
 
-最小可行项目（MVP），用于把 Claudeception 的知识沉淀工作流移植到 Codex。
+A minimum viable project (MVP) to migrate Claudeception's skill-extraction workflow into Codex.
 
-## 目标
-- 定义一套可在 Codex 中执行的“任务后复盘 -> 提炼技能 -> 落盘”流程。
-- 先从目录结构和文档开始，不做自动化 hook。
+## Goals
+- Define a Codex-executable workflow for post-task review -> skill extraction -> persistent storage.
+- Start with project structure and documentation first, without automation hooks.
 
-## 当前范围（MVP v0）
-- 文档规范
-- 技能模板
-- 执行清单
+## Current Scope (MVP v0)
+- Documentation conventions
+- Skill template
+- Execution checklist
 
-## 非目标（当前不做）
-- 自动 Hook 注入
-- 大规模脚本自动化
-- CI 集成
+## Out of Scope (for now)
+- Automatic hook injection
+- Large-scale script automation
+- CI integration
 
-## 下一步
-1. 先按 `docs/migration-checklist.md` 完成文档内迁移。
-2. 用一个真实任务产出第一个技能样例。
-3. 再决定是否补 `scripts/` 自动化。
+## Next Steps
+1. Complete document-level migration using `docs/migration-checklist.md`.
+2. Produce the first real skill from an actual task.
+3. Decide whether to add script automation in `scripts/`.
 
 ## Migrated from Claudeception
 
@@ -32,3 +32,5 @@
   - `tests/fixtures/test-skill-parsing.yaml`
   - `scripts/test-skill-parsing.js`
   - `docs/test-skill-parsing.md`
+- Research reference document:
+  - `docs/references/research-references.md`

@@ -1,21 +1,21 @@
 # Migration Checklist: Claudeception -> Codex
 
-## 1. Path & Layout
-- [ ] 将 `.claude/skills/*` 映射到 `skills/*`
-- [ ] 将命令模板迁移到 `docs/` 或 `scripts/`
+## 1. Paths and Layout
+- [ ] Map `.claude/skills/*` to `skills/*`
+- [ ] Move command templates into `docs/` or `scripts/`
 
 ## 2. Provider-specific Content
-- [ ] 删除 Claude 专有调用语句
-- [ ] 改写为 Codex 可执行指令
+- [ ] Remove Claude-specific invocation text
+- [ ] Rewrite steps into Codex-executable instructions
 
 ## 3. Workflow Rules
-- [ ] 在 `AGENTS.md` 写入强制复盘规则
-- [ ] 定义质量门槛（可复现/可检索/可复用）
+- [ ] Add mandatory post-task review rule in `AGENTS.md`
+- [ ] Define quality gate (reproducible/searchable/reusable)
 
 ## 4. Validation
-- [ ] 用真实任务验证至少 1 个新增 skill
-- [ ] 验证 skill 能被后续任务正确触发
+- [ ] Validate with at least one real task-derived skill
+- [ ] Confirm later tasks can correctly trigger and reuse that skill
 
-## 5. Automation (later)
-- [ ] 评估脚本化入口（PowerShell/Node）
-- [ ] 再考虑 Hook/CI 集成
+## 5. Automation (Later)
+- [ ] Evaluate script-based entrypoints (PowerShell/Node)
+- [ ] Consider Hook/CI integration only after manual workflow is stable

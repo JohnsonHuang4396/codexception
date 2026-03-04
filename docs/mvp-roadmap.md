@@ -1,14 +1,14 @@
 # MVP Roadmap
 
 ## Phase 1: Docs First
-- 目录结构
-- 规则文档
-- 模板文档
+- Project directory structure
+- Process and rule documents
+- Skill template document
 
 ## Phase 2: One Real Skill
-- 选择一个最近的真实问题
-- 按模板提炼并验证
+- Pick a recent real issue
+- Extract and validate a skill using the template
 
 ## Phase 3: Lightweight Tooling
-- 增加脚本帮助创建 skill 目录与初稿
-- 增加简单 lint（必填字段检查）
+- Add helper scripts to scaffold new skills
+- Add a minimal lint/check for required fields

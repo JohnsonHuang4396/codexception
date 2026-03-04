@@ -1,12 +1,12 @@
 # Architecture (MVP)
 
 ## Workflow
-1. 输入任务
-2. 执行任务
-3. 任务结束触发复盘
-4. 通过质量门槛则生成/更新 skill
-5. 保存到 `skills/` 并记录验证证据
+1. Receive task input
+2. Execute task
+3. Trigger post-task review
+4. If quality gate passes, create or update a skill
+5. Save skill under `skills/` and keep verification evidence
 
-## Core Principle
-- 先人工流程跑通，再自动化。
-- 技能优先“检索命中率”和“执行确定性”。
+## Core Principles
+- Prove manual workflow first, then automate.
+- Optimize skills for retrieval precision and execution determinism.

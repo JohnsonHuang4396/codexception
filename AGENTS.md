@@ -1,18 +1,18 @@
 # Agent Rules (MVP)
 
 ## Purpose
-这个仓库用于 Codex 版“知识沉淀”流程验证。
+This repository validates a Codex-first knowledge consolidation workflow.
 
 ## Working Rules
-- 每次任务结束后，必须执行一次“是否可沉淀为 skill”的评估。
-- 如果可沉淀，按 `skills/skill-template.md` 生成新 skill 文档。
-- 不允许复制模糊经验，必须写清楚：触发条件、步骤、验证方法、反例。
+- After every task, run an explicit evaluation: should this be extracted as a skill?
+- If yes, create or update a skill document using `skills/skill-template.md`.
+- Do not store vague experience; always document trigger conditions, steps, validation, and anti-patterns.
 
 ## Quality Gate
-- 可复现：他人按步骤可执行。
-- 可检索：标题与描述包含真实报错/场景关键字。
-- 可复用：不能只绑定一次性上下文。
+- Reproducible: another engineer can execute the same steps.
+- Searchable: title and description include real error or scenario keywords.
+- Reusable: avoid one-off, context-locked knowledge.
 
 ## Storage
-- 新技能落盘到：`skills/<topic>/SKILL.md`
-- 设计文档落盘到：`docs/plans/YYYY-MM-DD-<topic>-design.md`
+- New skills: `skills/<topic>/SKILL.md`
+- Design docs: `docs/plans/YYYY-MM-DD-<topic>-design.md`

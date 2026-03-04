@@ -1,17 +1,17 @@
 # 2026-03-04 codexception-mvp Design
 
 ## Context
-目标是在 Codex 环境中复现 Claudeception 的核心价值：把一次性解决过程沉淀为可复用技能。
+The goal is to reproduce Claudeception's core value in Codex: convert one-off problem-solving into reusable skills.
 
 ## Scope
-- 仅建立目录、规则、模板、路线图。
-- 不实现自动触发机制。
+- Create directories, rules, templates, and roadmap only.
+- Do not implement automatic triggering yet.
 
-## Design Decision
-- 优先文档驱动，降低早期复杂度。
-- 以 `AGENTS.md` 作为“强制复盘”入口。
-- 以 `skills/skill-template.md` 作为统一输出格式。
+## Design Decisions
+- Prefer a documentation-first approach to reduce early complexity.
+- Use `AGENTS.md` as the mandatory post-task review entrypoint.
+- Use `skills/skill-template.md` as the unified output format.
 
 ## Success Criteria
-- 项目可直接用于人工沉淀技能。
-- 新成员可以在 10 分钟内理解流程并产出首个 skill 草稿。
+- The project can be used immediately for manual skill extraction.
+- A new contributor can understand the workflow and produce a first skill draft within 10 minutes.
