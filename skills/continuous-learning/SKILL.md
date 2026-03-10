@@ -4,10 +4,10 @@ description: |
   Continuous learning system for Codex that extracts reusable knowledge from completed work.
   Triggers: (1) user asks to save/extract what was learned, (2) end-of-task review after non-obvious debugging
   or trial-and-error, (3) recurring issues where a reusable fix pattern emerges. Produces or updates skills
-  in this repository when knowledge is specific, verified, and reusable.
+  in the current repository when knowledge is specific, verified, reusable, safe to share, and approved.
 author: Codex
-version: 3.0.0
-date: 2026-03-04
+version: 3.1.0
+date: 2026-03-10
 ---
 
 # Continuous Learning Skill (Codex)
@@ -38,6 +38,17 @@ Before extracting, verify all criteria:
 - Non-trivial: Required discovery, not simple doc lookup.
 - Specific: Has precise trigger conditions and concrete steps.
 - Verified: Worked in practice with observable validation.
+- Safe: Sensitive or private information can be removed or generalized without harming reuse.
+
+## Approval Mode
+
+Default mode is **propose-first**:
+
+1. Identify up to 2 high-value candidate learnings.
+2. Present them briefly to the human with why they are reusable.
+3. Wait for approval before creating or updating a long-lived skill.
+
+Use immediate write only when the human explicitly asks to save or extract it as a skill.
 
 ## Extraction Process
 
@@ -82,8 +93,13 @@ Use `skills/skill-template.md` and produce:
 
 ### Step 5: Save in Correct Location
 
-- Core skills: `skills/<skill-name>/SKILL.md`
-- Examples: `examples/<topic>/SKILL.md`
+Choose the narrowest correct destination:
+
+- Repository reusable skills: `skills/<skill-name>/SKILL.md`
+- Examples, demos, or reference patterns: `examples/<topic>/SKILL.md`
+- External/global agent skills only when explicitly working outside the repository's own skill library.
+
+Default to updating an existing skill before creating a new one.
 
 ## Description Writing Rules
 
@@ -122,7 +138,8 @@ Do not finalize until all pass:
 - [ ] Solution was verified in real execution.
 - [ ] Validation steps are clear and observable.
 - [ ] Skill is reusable and not duplicated.
-- [ ] Sensitive info is excluded.
+- [ ] Sensitive info is excluded or generalized.
+- [ ] Human approval was obtained, unless the human explicitly requested immediate extraction.
 - [ ] References added when research was used.
 
 ## Anti-Patterns
@@ -134,6 +151,8 @@ Avoid:
 - Unverified or speculative solutions.
 - Rewriting official docs without added practical value.
 - Creating new skills when updating existing one is better.
+- Converting user-specific private preferences, one-off private facts, or sensitive workflow details into general skills.
+- Delegating raw private task history to another agent just to manufacture a skill.
 
 ## Skill Lifecycle
 
@@ -159,6 +178,6 @@ Explicit trigger phrases from user:
 Primary storage paths in this repository:
 
 - `skills/`
-- `examples/`
+- `examples/` for demos or reference patterns only
 
-Goal: convert valuable discoveries into durable, retrievable execution knowledge.
+Goal: convert valuable discoveries into durable, retrievable execution knowledge without leaking private context.
